@@ -41,5 +41,12 @@ Launch visualization:
 
 ros2 launch dof4_arm_description display.launch.py
 
+## Demo Video
+
+Robot arm joint motion demonstration in RViz.
+
+[Download Video](robot_motion.webm)
+
+
 ## Author
-Divya Gudgh
+Divya Gudghe
