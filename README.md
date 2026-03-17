@@ -41,6 +41,17 @@ Launch visualization:
 
 ros2 launch dof4_arm_description display.launch.py
 
+## Kinematics Overview
+
+This robotic arm consists of 4 degrees of freedom (DOF), where each joint contributes to the overall motion of the manipulator.
+
+- Joint 1: Base rotation (Z-axis)
+- Joint 2: Shoulder movement
+- Joint 3: Elbow movement
+- Joint 4: Wrist rotation
+
+The transformations between links are handled using TF in ROS2, allowing proper frame tracking and visualization in RViz.
+
 ## Demo Video
 
 Robot arm joint motion demonstration in RViz.
