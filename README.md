@@ -1,63 +1,42 @@
-# ROS2 4DOF Robotic Arm Simulation
+[7:10 am, 18/3/2026] Divya: # ROS2 Robotic Arm (TF + URDF Visualization)
 
-This project demonstrates a 4 Degree of Freedom (4DOF) robotic arm modeled using URDF and visualized in RViz using ROS2.
+## Overview
+This project demonstrates a 4-DOF robotic arm built using URDF and visualized in RViz using ROS2.  
+The focus is on understanding coordinate frame transformations using TF2 and how joints are connected in a robotic system.
+
+---
+
+## Tech Stack
+- ROS2 (Humble)
+- URDF
+- TF2
+- RViz
+
+---
 
 ## Features
-- 4 DOF robotic arm
-- URDF robot description
-- STL mesh integration
-- TF transformations
+- 4-DOF robotic arm model
+- URDF-based robot description
+- Real-time TF frame visualization
+- Joint state manipulation
 - RViz visualization
-- ROS2 launch file
 
-## Technologies
-- ROS2
-- URDF
-- RViz
-- TF
-- Ubuntu Linux
+---
 
-## Project Structure
+## Output
 
-src/
- └── dof4_arm_description
-      ├── urdf
-      ├── meshes
-      ├── launch
-      ├── CMakeLists.txt
-      └── package.xml
+### Robot Motion
+![Robot Motion](robot_motion.png)
 
-## Run the Project
+### TF Visualization
+![TF View](robot_tf_view.png)
 
-Clone the repository:
+---
 
-git clone https://github.com/divyagudghe/ros2-4dof-robotic-arm.git
+## How to Run
 
-Build workspace:
-
+```bash
+cd ~/ros2_ws
 colcon build
-
-Launch visualization:
-
+source install/setup.bash
 ros2 launch dof4_arm_description display.launch.py
-
-## Kinematics Overview
-
-This robotic arm consists of 4 degrees of freedom (DOF), where each joint contributes to the overall motion of the manipulator.
-
-- Joint 1: Base rotation (Z-axis)
-- Joint 2: Shoulder movement
-- Joint 3: Elbow movement
-- Joint 4: Wrist rotation
-
-The transformations between links are handled using TF in ROS2, allowing proper frame tracking and visualization in RViz.
-
-## Demo Video
-
-Robot arm joint motion demonstration in RViz.
-
-[Download Video](robot_motion.webm)
-
-
-## Author
-Divya Gudghe
