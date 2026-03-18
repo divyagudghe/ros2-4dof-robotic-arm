@@ -1,9 +1,0 @@
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/uninstall.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/dof4_arm_ros2_uninstall.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/test.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/edit_cache.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/rebuild_cache.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/list_install_components.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/install.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/install/local.dir
-/home/divya/ros2_ws/build/dof4_arm_ros2/CMakeFiles/install/strip.dir
