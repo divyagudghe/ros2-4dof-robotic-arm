@@ -40,3 +40,6 @@ cd ~/ros2_ws
 colcon build
 source install/setup.bash
 ros2 launch dof4_arm_description display.launch.py
+
+## Notes
+- Robot mesh (.stl) files are sourced from open-source resources and used for visualization purposes.
