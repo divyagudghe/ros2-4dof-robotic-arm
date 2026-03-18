@@ -7,7 +7,7 @@ The focus is on understanding coordinate frame transformations using TF2 and how
 ---
 
 ## Tech Stack
-- ROS2 (Humble)
+- ROS2 (jazzy)
 - URDF
 - TF2
 - RViz
