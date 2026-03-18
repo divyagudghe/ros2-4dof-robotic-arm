@@ -1,0 +1,15 @@
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/ament_index/resource_index/package_run_dependencies/dof4_arm_ros2
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/ament_index/resource_index/parent_prefix_path/dof4_arm_ros2
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/ament_prefix_path.sh
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/ament_prefix_path.dsv
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/path.sh
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/path.dsv
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.bash
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.sh
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.zsh
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.dsv
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/package.dsv
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/ament_index/resource_index/packages/dof4_arm_ros2
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/cmake/dof4_arm_ros2Config.cmake
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/cmake/dof4_arm_ros2Config-version.cmake
+/home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/package.xml

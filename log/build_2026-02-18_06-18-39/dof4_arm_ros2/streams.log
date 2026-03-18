@@ -1,0 +1,40 @@
+[0.007s] Invoking command in '/home/divya/ros2_ws/build/dof4_arm_ros2': AMENT_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/divya/ros2_ws/src/dof4_arm_ros2 -DCMAKE_INSTALL_PREFIX=/home/divya/ros2_ws/install/dof4_arm_ros2
+[0.157s] -- The C compiler identification is GNU 13.3.0
+[0.247s] -- The CXX compiler identification is GNU 13.3.0
+[0.264s] -- Detecting C compiler ABI info
+[0.411s] -- Detecting C compiler ABI info - done
+[0.421s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.422s] -- Detecting C compile features
+[0.422s] -- Detecting C compile features - done
+[0.432s] -- Detecting CXX compiler ABI info
+[0.571s] -- Detecting CXX compiler ABI info - done
+[0.586s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.587s] -- Detecting CXX compile features
+[0.588s] -- Detecting CXX compile features - done
+[0.595s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.766s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.888s] -- Found ament_lint_auto: 0.17.3 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.035s] -- Configuring done (1.0s)
+[1.038s] -- Generating done (0.0s)
+[1.040s] -- Build files have been written to: /home/divya/ros2_ws/build/dof4_arm_ros2
+[1.046s] Invoked command in '/home/divya/ros2_ws/build/dof4_arm_ros2' returned '0': AMENT_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/divya/ros2_ws/src/dof4_arm_ros2 -DCMAKE_INSTALL_PREFIX=/home/divya/ros2_ws/install/dof4_arm_ros2
+[1.047s] Invoking command in '/home/divya/ros2_ws/build/dof4_arm_ros2': AMENT_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/divya/ros2_ws/build/dof4_arm_ros2 -- -j3 -l3
+[1.125s] Invoked command in '/home/divya/ros2_ws/build/dof4_arm_ros2' returned '0': AMENT_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/divya/ros2_ws/build/dof4_arm_ros2 -- -j3 -l3
+[1.127s] Invoking command in '/home/divya/ros2_ws/build/dof4_arm_ros2': AMENT_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/divya/ros2_ws/build/dof4_arm_ros2
+[1.140s] -- Install configuration: ""
+[1.141s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/ament_index/resource_index/package_run_dependencies/dof4_arm_ros2
+[1.141s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/ament_index/resource_index/parent_prefix_path/dof4_arm_ros2
+[1.141s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/ament_prefix_path.sh
+[1.141s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/ament_prefix_path.dsv
+[1.141s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/path.sh
+[1.142s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/environment/path.dsv
+[1.142s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.bash
+[1.142s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.sh
+[1.142s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.zsh
+[1.142s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/local_setup.dsv
+[1.142s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/package.dsv
+[1.143s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/ament_index/resource_index/packages/dof4_arm_ros2
+[1.143s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/cmake/dof4_arm_ros2Config.cmake
+[1.143s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/cmake/dof4_arm_ros2Config-version.cmake
+[1.143s] -- Installing: /home/divya/ros2_ws/install/dof4_arm_ros2/share/dof4_arm_ros2/package.xml
+[1.147s] Invoked command in '/home/divya/ros2_ws/build/dof4_arm_ros2' returned '0': AMENT_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/divya/ros2_ws/install/dof4_arm_description:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/divya/ros2_ws/build/dof4_arm_ros2

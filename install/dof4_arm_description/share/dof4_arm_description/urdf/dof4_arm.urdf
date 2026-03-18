@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<robot name="dof4_arm">
+
+  <!-- BASE -->
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/plate.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- LINK 1 -->
+
+  <link name="link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link1.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.05"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+  </joint>
+
+
+  <!-- LINK 2 -->
+
+  <link name="link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link2.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.1"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+  </joint>
+
+
+  <!-- LINK 3 -->
+
+  <link name="link3">
+    <visual>
+      <geometry>
+        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link3.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint3" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0 0 0.1"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+  </joint>
+
+
+  <!-- LINK 4 -->
+
+  <link name="link4">
+    <visual>
+      <geometry>
+        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link4.stl" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint4" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 0 0.1"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+  </joint>
+
+</robot>
