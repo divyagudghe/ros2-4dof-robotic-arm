@@ -2,22 +2,27 @@
 <robot name="dof4_arm">
 
   <!-- BASE -->
-
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/plate.stl" scale="1 1 1"/>
+        <box size="0.4 0.4 0.1"/>
       </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
     </visual>
   </link>
 
   <!-- LINK 1 -->
-
   <link name="link1">
     <visual>
+      <origin xyz="0 0 0.2"/>
       <geometry>
-        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link1.stl" scale="1 1 1"/>
+        <cylinder length="0.4" radius="0.05"/>
       </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
     </visual>
   </link>
 
@@ -29,61 +34,158 @@
     <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
   </joint>
 
-
   <!-- LINK 2 -->
-
   <link name="link2">
     <visual>
+      <origin xyz="0.3 0 0"/>
       <geometry>
-        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link2.stl" scale="1 1 1"/>
+        <box size="0.6 0.1 0.1"/>
       </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
     </visual>
   </link>
 
   <joint name="joint2" type="revolute">
     <parent link="link1"/>
     <child link="link2"/>
-    <origin xyz="0 0 0.1"/>
+    <origin xyz="0 0 0.4"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
-
   <!-- LINK 3 -->
-
   <link name="link3">
     <visual>
+      <origin xyz="0.25 0 0"/>
       <geometry>
-        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link3.stl" scale="1 1 1"/>
+        <box size="0.5 0.08 0.08"/>
       </geometry>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
     </visual>
   </link>
 
   <joint name="joint3" type="revolute">
     <parent link="link2"/>
     <child link="link3"/>
-    <origin xyz="0 0 0.1"/>
+    <origin xyz="0.6 0 0"/>
     <axis xyz="0 1 0"/>
-    <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+    <limit lower="-1.57" upper="1.57" effort="10" velocity="1"/>
   </joint>
 
-
   <!-- LINK 4 -->
-
   <link name="link4">
     <visual>
+      <origin xyz="0.2 0 0"/>
       <geometry>
-        <mesh filename="package://dof4_arm_description/meshes/open_manipulator_x/link4.stl" scale="1 1 1"/>
+        <box size="0.4 0.07 0.07"/>
       </geometry>
+      <material name="cyan">
+        <color rgba="0 1 1 1"/>
+      </material>
     </visual>
   </link>
 
   <joint name="joint4" type="revolute">
     <parent link="link3"/>
     <child link="link4"/>
-    <origin xyz="0 0 0.1"/>
-    <axis xyz="0 1 0"/>
+    <origin xyz="0.5 0 0"/>
+    <axis xyz="1 0 0"/>
     <limit lower="-3.14" upper="3.14" effort="10" velocity="1"/>
+  </joint>
+
+  <!-- GRIPPER BASE -->
+  <link name="gripper_base">
+    <visual>
+      <origin xyz="0.05 0 0"/>
+      <geometry>
+        <box size="0.1 0.06 0.06"/>
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="gripper_base_joint" type="fixed">
+    <parent link="link4"/>
+    <child link="gripper_base"/>
+    <origin xyz="0.3 0 0"/>
+  </joint>
+
+  <!-- LEFT FINGER -->
+  <link name="left_finger">
+    <visual>
+      <origin xyz="0.04 0.025 0"/>
+      <geometry>
+        <box size="0.08 0.02 0.02"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="left_finger_joint" type="prismatic">
+    <parent link="gripper_base"/>
+    <child link="left_finger"/>
+    <origin xyz="0 0.02 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0.0" upper="0.04" effort="10" velocity="0.2"/>
+  </joint>
+
+  <!-- RIGHT FINGER -->
+  <link name="right_finger">
+    <visual>
+      <origin xyz="0.04 -0.025 0"/>
+      <geometry>
+        <box size="0.08 0.02 0.02"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+  <joint name="right_finger_joint" type="prismatic">
+    <parent link="gripper_base"/>
+    <child link="right_finger"/>
+    <origin xyz="0 -0.02 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0.0" upper="0.04" effort="10" velocity="0.2"/>
+  </joint>
+
+  <!-- OBJECT TO PICK -->
+  <link name="object_box">
+    <visual>
+      <geometry>
+        <box size="0.06 0.06 0.06"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <joint name="object_fixed" type="fixed">
+    <parent link="gripper_base"/>
+    <child link="object_box"/>
+    <origin xyz="0.05 0 0"/>
+  </joint>
+
+  <!-- PLACE TARGET -->
+  <link name="place_box">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.04"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="place_fixed" type="fixed">
+    <parent link="gripper_base"/>
+    <child link="place_box"/>
+    <origin xyz="0.05 0 0"/>
   </joint>
 
 </robot>
