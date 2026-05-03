@@ -1,8 +1,9 @@
 build/
 install/
 log/
-_pycache_/
+__pycache__/
 *.pyc
+*.stamp
 *.log
-*.bag
-*.db
+*.temp
+*.txt
