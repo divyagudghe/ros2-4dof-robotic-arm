@@ -1,9 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# ROS2 build folders
 build/
 install/
 log/
-__pycache__/
-*.pyc
-*.stamp
-*.log
-*.temp
-*.txt
+
+# Temporary files (generated during runs)
+temp.txt
+txt.temp
+system_output.txt
+vib.txt
+
+# Unused archive (not needed in repo)
+sensor_data.zip
+
+# OS junk
+.DS_Store
+
+# Editor
+.vscode/
