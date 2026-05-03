@@ -1,0 +1,258 @@
+data: 3.63,normal
+---
+data: 4.07,normal
+---
+data: 4.36,normal
+---
+data: 4.49,normal
+---
+data: 4.45,normal
+---
+data: 4.23,normal
+---
+data: 3.85,normal
+---
+data: 3.35,normal
+---
+data: 2.78,normal
+---
+data: 2.18,normal
+---
+data: 1.61,normal
+---
+data: 1.12,normal
+---
+data: 0.76,normal
+---
+data: 0.54,normal
+---
+data: 0.51,normal
+---
+data: 0.65,normal
+---
+data: 0.95,normal
+---
+data: 1.4,normal
+---
+data: 7.5,abnormal
+---
+data: 8.35,abnormal
+---
+data: 8.9,abnormal
+---
+data: 8.96,abnormal
+---
+data: 8.51,abnormal
+---
+data: 7.71,abnormal
+---
+data: 6.84,abnormal
+---
+data: 6.19,abnormal
+---
+data: 6.01,abnormal
+---
+data: 6.34,abnormal
+---
+data: 2.5,normal
+---
+data: 3.09,normal
+---
+data: 3.63,normal
+---
+data: 4.07,normal
+---
+data: 4.36,normal
+---
+data: 4.49,normal
+---
+data: 4.45,normal
+---
+data: 4.23,normal
+---
+data: 3.85,normal
+---
+data: 3.35,normal
+---
+data: 2.78,normal
+---
+data: 2.18,normal
+---
+data: 1.61,normal
+---
+data: 1.12,normal
+---
+data: 0.76,normal
+---
+data: 0.54,normal
+---
+data: 0.51,normal
+---
+data: 0.65,normal
+---
+data: 0.95,normal
+---
+data: 1.4,normal
+---
+data: 7.5,abnormal
+---
+data: 8.35,abnormal
+---
+data: 8.9,abnormal
+---
+data: 8.96,abnormal
+---
+data: 8.51,abnormal
+---
+data: 7.71,abnormal
+---
+data: 6.84,abnormal
+---
+data: 6.19,abnormal
+---
+data: 6.01,abnormal
+---
+data: 6.34,abnormal
+---
+data: 2.5,normal
+---
+data: 3.09,normal
+---
+data: 3.63,normal
+---
+data: 4.07,normal
+---
+data: 4.36,normal
+---
+data: 4.49,normal
+---
+data: 4.45,normal
+---
+data: 4.23,normal
+---
+data: 3.85,normal
+---
+data: 3.35,normal
+---
+data: 2.78,normal
+---
+data: 2.18,normal
+---
+data: 1.61,normal
+---
+data: 1.12,normal
+---
+data: 0.76,normal
+---
+data: 0.54,normal
+---
+data: 0.51,normal
+---
+data: 0.65,normal
+---
+data: 0.95,normal
+---
+data: 1.4,normal
+---
+data: 7.5,abnormal
+---
+data: 8.35,abnormal
+---
+data: 8.9,abnormal
+---
+data: 8.96,abnormal
+---
+data: 8.51,abnormal
+---
+data: 7.71,abnormal
+---
+data: 6.84,abnormal
+---
+data: 6.19,abnormal
+---
+data: 6.01,abnormal
+---
+data: 6.34,abnormal
+---
+data: 2.5,normal
+---
+data: 3.09,normal
+---
+data: 3.63,normal
+---
+data: 4.07,normal
+---
+data: 4.36,normal
+---
+data: 4.49,normal
+---
+data: 4.45,normal
+---
+data: 4.23,normal
+---
+data: 3.85,normal
+---
+data: 3.35,normal
+---
+data: 2.78,normal
+---
+data: 2.18,normal
+---
+data: 1.61,normal
+---
+data: 1.12,normal
+---
+data: 0.76,normal
+---
+data: 0.54,normal
+---
+data: 0.51,normal
+---
+data: 0.65,normal
+---
+data: 0.95,normal
+---
+data: 1.4,normal
+---
+data: 7.5,abnormal
+---
+data: 8.35,abnormal
+---
+data: 8.9,abnormal
+---
+data: 8.96,abnormal
+---
+data: 8.51,abnormal
+---
+data: 7.71,abnormal
+---
+data: 6.84,abnormal
+---
+data: 6.19,abnormal
+---
+data: 6.01,abnormal
+---
+data: 6.34,abnormal
+---
+data: 2.5,normal
+---
+data: 3.09,normal
+---
+data: 3.63,normal
+---
+data: 4.07,normal
+---
+data: 4.36,normal
+---
+data: 4.49,normal
+---
+data: 4.45,normal
+---
+data: 4.23,normal
+---
+data: 3.85,normal
+---
+data: 3.35,normal
+---
+data: 2.78,normal
+---

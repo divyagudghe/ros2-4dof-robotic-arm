@@ -1,0 +1,140 @@
+data: 43.65,normal
+---
+data: 40.73,normal
+---
+data: 40.06,normal
+---
+data: 41.75,normal
+---
+data: 45.53,normal
+---
+data: 80.0,abnormal
+---
+data: 83.89,abnormal
+---
+data: 87.17,abnormal
+---
+data: 89.32,abnormal
+---
+data: 90.0,abnormal
+---
+data: 89.09,abnormal
+---
+data: 86.75,abnormal
+---
+data: 83.35,abnormal
+---
+data: 79.42,abnormal
+---
+data: 75.57,abnormal
+---
+data: 72.43,normal
+---
+data: 70.48,normal
+---
+data: 70.04,normal
+---
+data: 71.17,normal
+---
+data: 73.69,normal
+---
+data: 55.0,normal
+---
+data: 60.84,normal
+---
+data: 65.76,normal
+---
+data: 68.98,normal
+---
+data: 69.99,normal
+---
+data: 68.64,normal
+---
+data: 65.13,normal
+---
+data: 60.02,normal
+---
+data: 54.12,normal
+---
+data: 48.36,normal
+---
+data: 43.65,normal
+---
+data: 40.73,normal
+---
+data: 40.06,normal
+---
+data: 41.75,normal
+---
+data: 45.53,normal
+---
+data: 80.0,abnormal
+---
+data: 83.89,abnormal
+---
+data: 87.17,abnormal
+---
+data: 89.32,abnormal
+---
+data: 90.0,abnormal
+---
+data: 89.09,abnormal
+---
+data: 86.75,abnormal
+---
+data: 83.35,abnormal
+---
+data: 79.42,abnormal
+---
+data: 75.57,abnormal
+---
+data: 72.43,normal
+---
+data: 70.48,normal
+---
+data: 70.04,normal
+---
+data: 71.17,normal
+---
+data: 73.69,normal
+---
+data: 55.0,normal
+---
+data: 60.84,normal
+---
+data: 65.76,normal
+---
+data: 68.98,normal
+---
+data: 69.99,normal
+---
+data: 68.64,normal
+---
+data: 65.13,normal
+---
+data: 60.02,normal
+---
+data: 54.12,normal
+---
+data: 48.36,normal
+---
+data: 43.65,normal
+---
+data: 40.73,normal
+---
+data: 40.06,normal
+---
+data: 41.75,normal
+---
+data: 45.53,normal
+---
+data: 80.0,abnormal
+---
+data: 83.89,abnormal
+---
+data: 87.17,abnormal
+---
+data: 89.32,abnormal
+---
+data: 90.0,abnormal
+---

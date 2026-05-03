@@ -1,26 +1,40 @@
+#!/usr/bin/env python3
+
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32
-import random
+from std_msgs.msg import String
+import math
+
 
 class LoadNode(Node):
-    def _init_(self):
-        super()._init_('load_node')
-        self.publisher_ = self.create_publisher(Float32, 'load', 10)
-        self.timer = self.create_timer(1.0, self.publish_data)
-        self.value = 30.0
 
-    def publish_data(self):
-        self.value += random.uniform(2.0, 6.0)
+    def __init__(self):
+        super().__init__('load_node')
 
-        if self.value > 100:
-            self.value = 20.0
+        self.pub = self.create_publisher(String, '/sensor/load', 10)
+        self.timer = self.create_timer(1.0, self.update)
 
-        msg = Float32()
-        msg.data = self.value
+        self.t = 0
+        self.threshold = 10.0
 
-        self.publisher_.publish(msg)
-        self.get_logger().info(f"Load: {msg.data}")
+    def update(self):
+        self.t += 1
+        phase = (self.t + 18) % 45
+
+        if phase < 30:
+            value = 6.0 + 3.5 * math.sin(phase * 0.2)
+        else:
+            value = 12.5 + 1.5 * math.sin((phase - 30) * 0.4)
+
+        value = round(value, 2)
+        state = 'abnormal' if value >= self.threshold else 'normal'
+
+        msg = String()
+        msg.data = f"{value},{state}"
+        self.pub.publish(msg)
+
+        self.get_logger().info(f"[LOAD] {value} → {state}")
+
 
 def main(args=None):
     rclpy.init(args=args)
@@ -29,5 +43,6 @@ def main(args=None):
     node.destroy_node()
     rclpy.shutdown()
 
-if _name_ == '__main__':
+
+if __name__ == '__main__':
     main()

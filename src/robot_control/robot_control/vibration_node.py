@@ -1,26 +1,40 @@
+#!/usr/bin/env python3
+
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32
-import random
+from std_msgs.msg import String
+import math
+
 
 class VibrationNode(Node):
+
     def __init__(self):
         super().__init__('vibration_node')
-        self.publisher_ = self.create_publisher(Float32, 'vibration', 10)
-        self.timer = self.create_timer(1.0, self.publish_data)
-        self.value = 1.0
 
-    def publish_data(self):
-        self.value += random.uniform(0.5, 1.5)
+        self.pub = self.create_publisher(String, '/sensor/vibration', 10)
+        self.timer = self.create_timer(1.0, self.update)
 
-        if self.value > 10:
-            self.value = 1.0
+        self.t = 0
+        self.threshold = 5.0
 
-        msg = Float32()
-        msg.data = self.value
+    def update(self):
+        self.t += 1
+        phase = (self.t + 8) % 30  # phase shift vs temperature
 
-        self.publisher_.publish(msg)
-        self.get_logger().info(f"Vibration: {msg.data}")
+        if phase < 20:
+            value = 2.5 + 2.0 * math.sin(phase * 0.3)     # mostly normal
+        else:
+            value = 7.5 + 1.5 * math.sin((phase - 20) * 0.6)  # abnormal window
+
+        value = round(value, 2)
+        state = 'abnormal' if value >= self.threshold else 'normal'
+
+        msg = String()
+        msg.data = f"{value},{state}"
+        self.pub.publish(msg)
+
+        self.get_logger().info(f"[VIB] {value} → {state}")
+
 
 def main(args=None):
     rclpy.init(args=args)
@@ -28,6 +42,7 @@ def main(args=None):
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()

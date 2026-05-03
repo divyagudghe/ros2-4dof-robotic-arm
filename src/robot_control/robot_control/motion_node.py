@@ -1,144 +1,125 @@
+#!/usr/bin/env python3
+
 import rclpy
 from rclpy.node import Node
+from std_msgs.msg import String
 from sensor_msgs.msg import JointState
-import random
-import csv
-import time
+
+
+JOINT_NAMES = ['joint1', 'joint2', 'joint3', 'joint4']
+
+WAYPOINTS = [
+    (0.00, 0.30, -0.20, 0.00, 15),
+    (0.55, 0.50, -0.40, 0.00, 20),
+    (0.55, 0.80, -0.75, 0.00, 20),
+    (0.55, 0.80, -0.75, 0.60, 15),
+    (0.55, 0.50, -0.40, 0.60, 20),
+    (-0.55, 0.50, -0.40, 0.60, 25),
+    (-0.55, 0.80, -0.75, 0.60, 20),
+    (-0.55, 0.80, -0.75, -0.10, 15),
+    (-0.55, 0.40, -0.25, 0.00, 20),
+    (0.00, 0.30, -0.20, 0.00, 15),
+]
+
+SPEED_FAST = 20
+SPEED_SLOW = 70
+#!/usr/bin/env python3
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+from sensor_msgs.msg import JointState
+
+
+JOINT_NAMES = ['joint1', 'joint2', 'joint3', 'joint4']
+
+WAYPOINTS = [
+    ( 0.00, -0.80,  0.60,  0.00, 20),
+    ( 0.90, -0.50,  0.40,  0.00, 20),
+    ( 0.90, -0.20,  0.90,  0.00, 20),
+    ( 0.90, -0.20,  0.90,  1.57, 15),
+    ( 0.90, -0.70,  0.50,  1.57, 20),
+    (-0.90, -0.70,  0.50,  1.57, 25),
+    (-0.90, -0.20,  0.90,  1.57, 20),
+    (-0.90, -0.20,  0.90,  0.00, 15),
+    (-0.90, -0.80,  0.60,  0.00, 20),
+    ( 0.00, -0.80,  0.60,  0.00, 15),
+]
+
+FAST = 20
+SLOW = 60
+
 
 class MotionNode(Node):
 
     def __init__(self):
         super().__init__('motion_node')
 
-        self.publisher_ = self.create_publisher(JointState, '/joint_states', 10)
-        self.timer = self.create_timer(0.02, self.publish_joint_states)
+        self.create_subscription(String, '/system_action', self.action_cb, 10)
+        self.pub = self.create_publisher(JointState, '/joint_states', 10)
 
-        self.step = 0
+        self.action = 'RUNNING'
 
-        # INITIAL SENSOR VALUES
-        self.temperature = 30.0
-        self.load = 5.0
-        self.vibration = 0.2
+        self.i = 0
+        self.next_i = 1
+        self.hold = 0
+        self.move = 0
 
-        # PLC STATE
-        self.robot_enabled = True
-        self.cooldown_counter = 0
+        self.pos = list(WAYPOINTS[0][:4])
+        self.freeze = list(self.pos)
 
-        # CSV LOGGING
-        self.file = open('sensor_data.csv', 'w', newline='')
-        self.writer = csv.writer(self.file)
-        self.writer.writerow(['time','temperature','load','vibration','status'])
-        self.start_time = time.time()
+        # 🔥 FIXED TIMING (was 0.1 → now stable)
+        self.timer = self.create_timer(0.15, self.update)
 
-        self.joint_names = [
-            'joint1',
-            'joint2',
-            'joint3',
-            'joint4',
-            'left_finger_joint',
-            'right_finger_joint'
+    def action_cb(self, msg):
+        new = msg.data.strip()
+
+        if new == self.action:
+            return
+
+        self.action = new
+
+        if self.action == 'STOP SYSTEM':
+            self.freeze = list(self.pos)
+
+    def update(self):
+
+        if self.action == 'STOP SYSTEM':
+            self.publish(self.freeze)
+            return
+
+        speed = SLOW if self.action == 'WARNING' else FAST
+
+        wp = WAYPOINTS[self.i]
+        nxt = WAYPOINTS[self.next_i]
+
+        if self.hold < wp[4]:
+            self.hold += 1
+            self.publish(wp[:4])
+            return
+
+        self.move += 1
+        t = min(self.move / speed, 1.0)
+
+        self.pos = [
+            wp[j] + (nxt[j] - wp[j]) * t
+            for j in range(4)
         ]
 
-    def update_sensors(self):
-        # REALISTIC SENSOR CHANGE
-        self.temperature += random.uniform(-0.5, 0.5)
-        self.load += random.uniform(-0.2, 0.2)
-        self.vibration += random.uniform(-0.05, 0.05)
+        if t >= 1.0:
+            self.i = self.next_i
+            self.next_i = (self.next_i + 1) % len(WAYPOINTS)
+            self.move = 0
+            self.hold = 0
 
-        # LIMIT VALUES
-        self.temperature = max(20, min(self.temperature, 70))
-        self.load = max(2, min(self.load, 12))
-        self.vibration = max(0.1, min(self.vibration, 1.0))
+        self.publish(self.pos)
 
-    def plc_logic(self):
-
-        if self.temperature > 55 and self.robot_enabled:
-            self.get_logger().info("⚠️ High Temp → STOP")
-            self.robot_enabled = False
-            self.cooldown_counter = 100
-
-        if self.load > 10 and self.robot_enabled:
-            self.get_logger().info("⚠️ Overload → STOP")
-            self.robot_enabled = False
-            self.cooldown_counter = 100
-
-        if self.vibration > 0.8 and self.robot_enabled:
-            self.get_logger().info("⚠️ High Vibration → STOP")
-            self.robot_enabled = False
-            self.cooldown_counter = 100
-
-        # COOL DOWN
-        if not self.robot_enabled:
-            self.cooldown_counter -= 1
-
-            if self.cooldown_counter <= 0:
-                self.get_logger().info("✅ System Normal → START")
-                self.robot_enabled = True
-
-    def publish_joint_states(self):
-
-        # UPDATE SENSOR
-        self.update_sensors()
-
-        # APPLY LOGIC
-        self.plc_logic()
-
+    def publish(self, pos):
         msg = JointState()
         msg.header.stamp = self.get_clock().now().to_msg()
-        msg.name = self.joint_names
-
-        # DETERMINE STATUS FOR CSV
-        status = "normal"
-        if not self.robot_enabled:
-            status = "failure"
-
-        current_time = round(time.time() - self.start_time, 2)
-
-        self.writer.writerow([
-            current_time,
-            round(self.temperature,2),
-            round(self.load,2),
-            round(self.vibration,2),
-            status
-        ])
-
-        # STOP CONDITION
-        if not self.robot_enabled:
-            msg.position = [0.0, 0.2, 1.0, 0.0, 0.04, 0.04]
-            self.publisher_.publish(msg)
-            return
-
-        # NORMAL MOTION
-        if self.step < 40:
-            msg.position = [0.0, 0.2, 1.0, 0.0, 0.04, 0.04]
-
-        elif self.step < 80:
-            msg.position = [0.0, 0.5, 1.1, 0.0, 0.04, 0.04]
-
-        elif self.step < 120:
-            msg.position = [0.0, 0.7, 0.8, 0.0, 0.04, 0.04]
-
-        elif self.step < 150:
-            msg.position = [0.0, 0.7, 0.8, 0.0, 0.0, 0.0]
-
-        elif self.step < 190:
-            msg.position = [0.0, 0.4, 1.1, 0.0, 0.0, 0.0]
-
-        elif self.step < 230:
-            msg.position = [0.5, 0.4, 1.1, 0.0, 0.0, 0.0]
-
-        elif self.step < 260:
-            msg.position = [0.5, 0.4, 1.1, 0.0, 0.04, 0.04]
-
-        elif self.step < 300:
-            msg.position = [0.0, 0.2, 1.0, 0.0, 0.04, 0.04]
-
-        else:
-            self.step = 0
-            return
-
-        self.publisher_.publish(msg)
-        self.step += 1
+        msg.name = JOINT_NAMES
+        msg.position = pos
+        self.pub.publish(msg)
 
 
 def main(args=None):

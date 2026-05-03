@@ -1,0 +1,138 @@
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: STOP SYSTEM
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: WARNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---
+data: RUNNING
+---

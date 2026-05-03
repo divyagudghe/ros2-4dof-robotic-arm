@@ -1,4 +1,8 @@
 build/
 install/
 log/
-*.webm
+_pycache_/
+*.pyc
+*.log
+*.bag
+*.db
